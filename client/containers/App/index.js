@@ -52,5 +52,4 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
   }
 }
 
-
 export default App;

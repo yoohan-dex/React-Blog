@@ -5,7 +5,6 @@ $card-title-size: 30px;
 .card {
   border-radius: 0;
   display: flex;
-  flex-basis: 24.6%;
   margin: 0.5%;
   box-shadow: 0 2px 5px rgba(0,0,0,.26);
   width: 100%;
@@ -15,21 +14,32 @@ $card-title-size: 30px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  transform: rotateY(0deg);
+  transform: rotateZ(0deg);
   @include breakpoint(xlarge) {
-    flex-basis: 24%;
+    flex-basis: percentage((100-4)/4/100);
   }
   @include breakpoint(large) {
-    flex-basis: 32.3%;
+    flex-basis: percentage((100-3)/3/100);
   }
   @include breakpoint(medium) {
-    flex-basis: 49%;
+    flex-basis: percentage((100-2)/2/100);
   }
   @include breakpoint(small) {
     flex-basis: 100%;
   }
   @include breakpoint(xsmall) {
     flex-basis: 100%;
+  }
+}
+.cardStrink {
+  @include breakpoint(xlarge) {
+    flex-basis: percentage((100)/4/100);
+  }
+  @include breakpoint(large) {
+    flex-basis: percentage((100)/3/100);
+  }
+  @include breakpoint(medium) {
+    flex-basis: percentage((100)/2/100);
   }
 }
 

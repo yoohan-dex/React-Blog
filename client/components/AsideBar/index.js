@@ -4,7 +4,7 @@ import s from './styles.scss';
 class AsideBar extends Component {
   render() {
     return (
-      <aside className={s.asidebar}>
+      <aside id="asd" className={s.asidebar}>
         <ul>
           <li>
             <label>yoohoo!!!!!!</label>

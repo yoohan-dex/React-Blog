@@ -7,6 +7,9 @@ class Stage extends Component {
     super();
   }
 
+  getChildContext() {
+    return { logoState: this.props.logoState };
+  }
 
   render() {
     const { logoState } = this.props;
@@ -23,7 +26,9 @@ class Stage extends Component {
     );
   }
 }
-
+Stage.childContextTypes = {
+  logoState: PropTypes.bool,
+};
 Stage.propTypes = {
 
 };

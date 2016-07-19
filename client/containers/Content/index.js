@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Card from '../../components/Card';
 import { Panel } from '../../components/Layout';
@@ -25,6 +25,7 @@ class Content extends Component {
   }
 }
 
+
 const mapStateToProps = selector();
 
-export default connect(mapStateToProps)(Content);
+export default connect(mapStateToProps, null, null, { pure: false })(Content);
