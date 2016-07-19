@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import Card from '../../components/Card';
+import { Panel } from '../../components/Layout';
 import selector from './selectors';
 class Content extends Component {
   render() {
     return (
-      <div>
-        <h1>I'm content page</h1>
-        <article>{this.props.article}</article>
-      </div>
+      <Panel>
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+        <Card image="http://static.mnium.org/images/contenu/actus/LOL/Vi/lol_vi_neon_strike_artwork_hd.jpg" />
+      </Panel>
     );
   }
 }

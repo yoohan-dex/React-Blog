@@ -1,0 +1,42 @@
+@import '../../globalStyles/libs/index';
+
+.asidebar {
+  // transform: scale(1);
+
+  // display: flex;
+  
+  text-align: center;
+  // flex: 1;
+  // flex-grow: 1;
+  // width: 100px;
+  // flex-direction: column;
+  // align-items: stretch;
+  // overflow-y: hidden;
+  // display: flex;
+  // justify-content: flex-start;
+  // flex-wrap: wrap;
+  // font-family: _font(family);
+  // background: antiquewhite;
+  color: white;
+  @include breakpoint(xlarge) {
+    padding: 8% 0% 8% 2%;
+    flex-basis: percentage(1/4);
+    
+  }
+  @include breakpoint(large) {
+    padding: 7% 0% 7% 2%;
+    flex-basis: percentage(1/4);
+  }
+  @include breakpoint(medium) {
+    padding: 8% 0% 8% 2%;
+    flex-basis: percentage(1/3);
+  }
+  @include breakpoint(small) {
+    padding: 10% 0% 10% 2%;
+    flex-basis: percentage(1/2)
+  }
+  @include breakpoint(xsmall) {
+    padding: 10% 0% 10% 2%;
+    flex-basis: percentage(1/2)
+  }
+}

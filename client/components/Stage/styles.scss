@@ -1,0 +1,47 @@
+@import '../../globalStyles/libs/index';
+
+
+.stage {
+  right: 25%; 
+  // 初始位置
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: hidden;
+  flex-basis: 100%;
+  height: 100%;
+  transition-timing-function: $animation-curve-default;
+  transition-duration: $animation-duration;
+  transition-property: right, width;
+  @include breakpoint(large) {
+    right: percentage(1/4);
+  }
+  @include breakpoint(medium) {
+    right: percentage(1/3);
+  }
+  @include breakpoint(small) {
+    right: percentage(1/2);
+  }
+}
+
+.open {
+  right: 0%;
+}
+
+.gauss {
+  position: fixed;
+  width: 200%;
+  height: 100%;
+  z-index: 3000;
+  opacity: 0;
+  transition-timing-function: $animation-curve-default;
+  transition-duration: $animation-duration;
+  transition-property: opacity;
+  background-image: url('./gauss.svg');
+}
+.filter {
+  opacity: 1;
+}

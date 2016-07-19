@@ -1,0 +1,78 @@
+@import '../../globalStyles/libs/index';
+
+$card-title-size: 30px; 
+
+.card {
+  border-radius: 0;
+  display: flex;
+  flex-basis: 24.6%;
+  margin: 0.5%;
+  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  width: 100%;
+  flex-direction: column;
+  background: $card;
+  color: $theme-white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  transform: rotateY(0deg);
+  @include breakpoint(xlarge) {
+    flex-basis: 24%;
+  }
+  @include breakpoint(large) {
+    flex-basis: 32.3%;
+  }
+  @include breakpoint(medium) {
+    flex-basis: 49%;
+  }
+  @include breakpoint(small) {
+    flex-basis: 100%;
+  }
+  @include breakpoint(xsmall) {
+    flex-basis: 100%;
+  }
+}
+
+.cardMedia {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 42.55% 10% 10% 10%;
+  
+  .content {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+}
+.article {
+  color: white;
+  margin: 3% 7%;
+  & h1 {
+    font-family: Montserrat,  sans-serif;
+    // font-family: raleway, sans-serif;
+    
+    font-size: $card-title-size;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: _font(weight-bold);
+    font-smooth: always;
+  }
+  & p {
+    margin-bottom: 30px;    
+    font-family: raleway, sans-serif;
+    font-weight: _font(weight);
+    font-smooth: always;
+    line-height: 130%;
+    letter-spacing: _font(letter-spacing-small);
+  }
+  & small {
+    color: $button;
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../globalStyles/libs/index';
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$animation-curve-default: $animation-curve-fast-out-slow-in !default;
+$animation-duration: .35s;
+$nav-padding-right: 40px;
+$tab-label-v-padding: 5px;
+$tab-label-h-padding: 20px;
+$tab-text-height: 20px;
+$font-weight-semi-bold: 400;
+$tab-text-inactive-color: $button;
+.tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: $nav;
+  z-index: _misc(z-index-base);
+  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+}
+
+.navigation {
+  display: flex;
+  padding-right: $nav-padding-right;
+  flex-direction: row;
+}
+
+.pointer {
+  position: absolute;
+  width: 0px;
+  height: 3px;
+  margin-top: -3px;
+  background-color: $button;
+  transition-timing-function: $animation-curve-default;
+  transition-duration: $animation-duration;
+  transition-property: left, width;
+}
+
+.logo {
+  padding: $tab-label-v-padding $tab-label-h-padding;
+  font-family: 'Princess Sofia', cursive;
+  font-size: $tab-text-height;
+  font-weight: $font-weight-semi-bold;
+  line-height: 2;
+  color: $theme-white;
+  cursor: pointer;
+  text-shadow: 5px 5px 3px rgba(0,0,0,.26);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
