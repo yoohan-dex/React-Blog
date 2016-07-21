@@ -9,57 +9,5 @@
   align-items: stretch;
   justify-content: space-between;
   overflow-x: hidden;
-  @include breakpoint(large) {
-    width: percentage(4/3);
-  }
-  @include breakpoint(medium) {
-    width: percentage(3/2);
-  }
-  @include breakpoint(small) {
-    width: percentage(2/1);
-  }
-}
-
-
-
-.panel {
-  transform: scale(1);
-  position: relative;
-  display: flex;
-  height: 100%;
-  flex-basis: 75%;
-  flex: 1;
-  flex-direction: row;
-  align-items: stretch;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  font-family: _font(family);
-  @include breakpoint(xlarge) {
-    // padding: 8% 12%;
-  }
-  @include breakpoint(large) {
-    padding-left:  8%;
-    padding-right:  8%;
-    flex-basis: percentage(3/4);
-
-  }
-  @include breakpoint(medium) {
-    padding-left:  3%;
-    padding-right:  3%;
-    flex-basis: percentage(2/3);
-
-  }
-  @include breakpoint(small) {
-    padding-left:  1%;
-    padding-right:  1%;
-    flex-basis: percentage(1/2);
-
-  }
-  @include breakpoint(xsmall) {
-    padding-left:  0%;
-    padding-right:  0%;
-    flex-basis: percentage(1/2);
-
-  }
+  width: 100%;
 }

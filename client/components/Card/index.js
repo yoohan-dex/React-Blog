@@ -7,17 +7,19 @@ class Card extends Component {
   constructor() {
     super();
   }
+  componentWillUnmount() {
+  }
   render() {
     const { image, children } = this.props;
     const bgStyle = {
       backgroundImage: `url(${image})`,
     };
-    const strinkStyle = classnames(s.card, {
+    const style = classnames(s.card, {
       [s.cardStrink]: this.context.logoState,
     });
 
     return (
-      <div className={strinkStyle}>
+      <div className={style}>
         <Link to="/content">
           <div style={bgStyle} className={s.cardMedia}>
             <div className={s.content}></div>

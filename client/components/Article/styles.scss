@@ -1,0 +1,43 @@
+@import '../../globalStyles/libs/index';
+
+.article {
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px 2px $shadow;
+  flex-basis: 100%;
+  min-height: 1000px;
+  background: $card;
+  color: white;
+  overflow: hidden;
+  margin: 0 10%;
+  
+}
+.cardMedia {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 30% 10% 10% 10%;
+  
+  .title {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    margin-left: -5%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    background-color: rgba($card,0.6);
+    font-family: _font(family);
+    & h1 {
+      margin: 3px;
+    }
+  }
+}
+
+.markdown {
+  padding: 5% 10%;
+}

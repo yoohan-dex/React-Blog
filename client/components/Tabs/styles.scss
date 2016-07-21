@@ -1,13 +1,5 @@
 @import '../../globalStyles/libs/index';
-$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
-$animation-curve-default: $animation-curve-fast-out-slow-in !default;
-$animation-duration: .35s;
-$nav-padding-right: 40px;
-$tab-label-v-padding: 5px;
-$tab-label-h-padding: 20px;
-$tab-text-height: 20px;
-$font-weight-semi-bold: 400;
-$tab-text-inactive-color: $button;
+
 .tabs {
   position: fixed;
   top: 0;
@@ -23,8 +15,44 @@ $tab-text-inactive-color: $button;
 
 .navigation {
   display: flex;
-  padding-right: $nav-padding-right;
+  // padding-right: $nav-padding-right;
   flex-direction: row;
+
+  button {
+    background-color: $button;
+    color: white;
+    border: 0;
+    padding: 0 23px;
+    cursor: pointer;
+    &:hover {
+      background: $button-hover;
+    }
+    &:focus {
+      outline-style: none;
+    }
+    
+  }
+
+  input[type="text"] {
+    background: $card;
+    color: $theme-white;
+    border: 0;
+    padding: 0 15px;
+    text-decoration: none;
+    &:focus {
+      outline-style: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $placehold;
+    }
+  }
+  button,
+  input {
+    @include breakpoint(small) {
+      display: none;
+    }
+  }
 }
 
 .pointer {
@@ -43,10 +71,14 @@ $tab-text-inactive-color: $button;
   font-family: 'Princess Sofia', cursive;
   font-size: $tab-text-height;
   font-weight: $font-weight-semi-bold;
+
   line-height: 2;
   color: $theme-white;
   cursor: pointer;
   text-shadow: 5px 5px 3px rgba(0,0,0,.26);
+  @include breakpoint(xsmall) {
+    font-size: $tab-text-height-small;
+  }
 }
 .wrapper {
   display: flex;

@@ -1,0 +1,36 @@
+@import '../../globalStyles/libs/index';
+
+.panel {
+  transform: scale(1);
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-basis: 100%;
+  flex: 1;
+  flex-direction: row;
+  align-items: stretch;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-family: _font(family);
+  @include breakpoint(xlarge) {
+    // padding: 8% 12%;
+  }
+  @include breakpoint(large) {
+    padding: 0% 8%;
+
+  }
+  @include breakpoint(medium) {
+    padding: 0% 3%;
+
+  }
+  @include breakpoint(small) {
+    padding: 0% 1%;
+
+
+  }
+  @include breakpoint(xsmall) {
+    padding: 0% 0%;
+
+  }
+}

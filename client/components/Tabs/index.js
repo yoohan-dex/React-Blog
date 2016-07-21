@@ -12,28 +12,42 @@ class Tabs extends Component {
     this.parseChildren = this.parseChildren.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
     this.updatePointer = this.updatePointer.bind(this);
+    this.listenPointer = this.listenPointer.bind(this);
+    this.setPointerState = this.setPointerState.bind(this);
+    this.afterAllMounted = this.afterAllMounted.bind(this);
+    this.searchActive = this.searchActive.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.listenPointer(), false);
-    window.addEventListener('pagehide', this.listenPointer(), false);
-    this.listenPointer()();
+    window.addEventListener('resize', this.listenPointer, false);
+    setTimeout(this.afterAllMounted, 500);
+    // this.setPointerState(this.props.path.indexOf(location.pathname));
+    // this.updatePointer(this.props.path.indexOf(location.pathname));
   }
 
   // componentWillReceiveProps(nextProps) {
   //   this.updatePointer(this.state.index);
   // }
 
-  componentWillUnmount() {
-    this.updatePointer(this.state.index);
-  }
-  listenPointer() {
-    return this.updatePointer.bind(null, this.props.path.indexOf(location.pathname));
-  }
-  handleHeaderClick(idx) {
+  // componentWillUnmount() {
+  //   this.updatePointer(this.state.index);
+  // }
+  
+
+  setPointerState(idx) {
     this.setState({
       index: idx,
     }, this.updatePointer(idx));
+  }
+  afterAllMounted() {
+    return this.setPointerState(this.props.path.indexOf(location.pathname));
+  }
+  listenPointer() {
+    return this.updatePointer(this.state.index);
+  }
+
+  handleHeaderClick(idx) {
+    this.setPointerState(idx);
 
     if (this.props.onChange) this.props.onChange(idx);
   }
@@ -59,6 +73,9 @@ class Tabs extends Component {
       },
     });
   }
+  searchActive() {
+    this.setPointerState(2);
+  }
 
   renderHeaders(headers) {
     return headers.map((item, idx) =>
@@ -80,8 +97,12 @@ class Tabs extends Component {
         <div className={s.wrapper} ref="tabs">
           <nav className={s.navigation} ref="navigation">
             {this.renderHeaders(headers)}
+            <input key={2} type="text" placeholder="Search" />
+            <button onClick={this.searchActive}>✓</button>
+            
           </nav>
           <span className={s.pointer} style={this.state.pointer} />
+          
         </div>
       </header>
     );
@@ -92,6 +113,5 @@ Tabs.propTypes = {
   path: PropTypes.array,
   onChange: PropTypes.func,
 };
-
 
 export default Tabs;

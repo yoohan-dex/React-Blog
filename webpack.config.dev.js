@@ -49,6 +49,9 @@ export default {
         test: /\.scss$/,
         include: /node_modules/,
         loaders: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass',
+      }, {
+        test: /\.json$/,
+        loader: 'json',
       },
     ],
   },

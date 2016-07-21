@@ -8,13 +8,16 @@ class Tab extends Component {
     super();
     this.handleClick = this.handleClick.bind(this);
   }
+  // componentDidMount() {
+  //   this.props.updatePointer(this.props.paths.indexOf(this.props.path));
+  // }
 
   componentDidUpdate(prevProps) {
     if (!prevProps.active && this.props.active && this.props.onActive) {
       this.props.onActive();
     }
   }
-
+  
   handleClick(e) {
     if (this.props.onClick) {
       this.props.onClick(e);

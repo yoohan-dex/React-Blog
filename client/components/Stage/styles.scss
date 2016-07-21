@@ -2,11 +2,9 @@
 
 
 .stage {
-  right: 25%; 
-  // 初始位置
+  left: 0;
+  // offset position
   position: relative;
-  display: flex;
-  flex-direction: row;
   
   align-items: flex-start;
   justify-content: flex-start;
@@ -15,23 +13,28 @@
   
   transition-timing-function: $animation-curve-default;
   transition-duration: $animation-duration;
-  transition-property: right, width;
+  transition-property: left, width;
   @include breakpoint(large) {
     padding-top: 6%;
-    right: percentage(1/4);
   }
   @include breakpoint(medium) {
     padding-top: 8%;
-    right: percentage(1/3);
   }
   @include breakpoint(small) {
     padding-top: 10%;
-    right: percentage(1/2);
   }
 }
 
 .open {
-  right: 0%;
+  @include breakpoint(large) {
+    left: percentage(1/3);
+  }
+  @include breakpoint(medium) {
+    left: 48%;
+  }
+  @include breakpoint(small) {
+    left: percentage(1);
+  }
 }
 
 .gauss {

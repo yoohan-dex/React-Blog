@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Layout, Panel } from '../../components/Layout';
+import Layout from '../../components/Layout';
 import Stage from '../../components/Stage';
 import AsideBar from '../../components/AsideBar';
 import Nav from '../../components/Nav';
@@ -25,21 +25,19 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     const path = [
       '/content',
       '/',
-      'anywhere',
     ];
 
-  	
+
     return (
       <Layout>
         
           <Tabs path={path} logoOnClick={this.handleLogo}>
             <Tab label="article" />
             <Tab label="archives" />
-            <Tab label="about" />
           </Tabs>
           
           <Stage logoState={this.state.logo}>
-            <AsideBar />
+            <AsideBar logoState={this.state.logo} />
             {this.props.children}
           </Stage>
 

@@ -7,7 +7,7 @@
 @include skel-breakpoints((
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1368px)',
-		medium: '(max-width: 980px)',
+		medium: '(max-width: 1024px)',
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)',
 		xxsmall: '(max-width: 360px)'
@@ -35,5 +35,6 @@ $nav-padding-right: 40px;
 $tab-label-v-padding: 5px;
 $tab-label-h-padding: 20px;
 $tab-text-height: 20px;
+$tab-text-height-small: 15px; 
 $font-weight-semi-bold: 400;
 $tab-text-inactive-color: $button;

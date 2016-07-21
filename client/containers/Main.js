@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
-import { Panel } from '../components/Layout';
+import Panel from '../components/Panel';
 class Main extends Component {
   render() {
     return (

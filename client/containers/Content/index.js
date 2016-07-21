@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Card from '../../components/Card';
-import { Panel } from '../../components/Layout';
+import Panel from '../../components/Panel';
 import selector from './selectors';
 class Content extends Component {
   render() {
