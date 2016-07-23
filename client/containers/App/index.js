@@ -1,53 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import Layout from '../../components/Layout';
 import Stage from '../../components/Stage';
 import AsideBar from '../../components/AsideBar';
-import Nav from '../../components/Nav';
 import Tabs from '../../components/Tabs';
 import Tab from '../../components/Tab';
-import Card from '../../components/Card';
+import Loading from '../../components/Loading';
+import appSeletor from './selectors';
+import { loadApp, loadSuccess } from './actions';
+import path from './config';
+
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor() {
-    super();
-    this.state = {
-      logo: false,
-    };
-    this.handleLogo = this.handleLogo.bind(this);
-  }
-  handleLogo() {
-    this.setState({
-      logo: !this.state.logo,
-    });
+
+  componentDidMount() {
+    this.props.loadData();
   }
 
   render() {
-    const path = [
-      '/content',
-      '/',
-    ];
+    const { ready, error, title } = this.props;
 
+    if (!ready) {
+      return <Loading type="bubbles" color="#CE9296" />;
+    }
 
     return (
       <Layout>
-        
-          <Tabs path={path} logoOnClick={this.handleLogo}>
-            <Tab label="article" />
-            <Tab label="archives" />
-          </Tabs>
-          
-          <Stage logoState={this.state.logo}>
-            <AsideBar logoState={this.state.logo} />
-            {this.props.children}
-          </Stage>
-
-          
-
+        <Tabs path={path} menu={title}>
+          <Tab label="article" />
+          <Tab label="archives" />
+        </Tabs>
+        <Stage>
+          <AsideBar />
+          {this.props.children}
+        </Stage>
       </Layout>
 
 
     );
   }
 }
-
-export default App;
+const mapStateToProps = appSeletor();
+function mapDispatchToProps(dispatch) {
+  return {
+    loadData: () => dispatch(loadApp()),
+    dispatch,
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);

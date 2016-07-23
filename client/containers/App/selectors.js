@@ -1,4 +1,30 @@
-// selectLocationState expects a plain JS object for the routing state
+import { createSelector } from 'reselect';
+
+const globalDomain = () => state => state.get('global');
+
+const readySeletor = () => createSelector(
+  globalDomain(),
+  s => s.get('ready')
+);
+
+const errorSeletor = () => createSelector(
+  globalDomain(),
+  globalState => globalState.get('error')
+);
+
+const titleSeletor = () => createSelector(
+  globalDomain(),
+  globalState => globalState.get('title')
+);
+
+const appSeletor = () => createSelector(
+  globalDomain(),
+  readySeletor(),
+  errorSeletor(),
+  titleSeletor(),
+  substate => substate.toJS()
+);
+
 const selectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
@@ -15,6 +41,10 @@ const selectLocationState = () => {
   };
 };
 
+export default appSeletor;
 export {
   selectLocationState,
+  readySeletor,
+  errorSeletor,
+  titleSeletor,
 };

@@ -11,7 +11,31 @@
   color: white;
   overflow: hidden;
   margin: 0 10%;
-  
+  @include breakpoint(medium) {
+    margin: 0 3%;
+  }
+  @include breakpoint(small) {
+    margin: 0 1%;
+  }
+  @include breakpoint(xsmall) {
+    margin: 0 0;
+  }
+  ol, ul {
+    list-style: initial;
+    margin-bottom: _size(element-margin)
+  }
+  ul {
+    list-style-type: square;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  li {
+		margin: 0 0 1em 0;
+  }
+  a {
+    color: $article-a;
+  }
 }
 .cardMedia {
   position: relative;

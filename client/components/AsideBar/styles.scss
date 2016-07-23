@@ -13,7 +13,7 @@
   text-align: center;
   z-index: 6000;
   transition-timing-function: $animation-curve-default;
-  transition-duration: $animation-duration;
+  transition-duration: .5s;
   transition-property: left, width;
   @include breakpoint(xlarge) {
     // padding: 8% 0% 8% 2%;

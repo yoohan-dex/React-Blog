@@ -8,4 +8,5 @@ module.exports = {
     browser: true,
     node: true,
   },
+  exclude: /fetch/,
 };

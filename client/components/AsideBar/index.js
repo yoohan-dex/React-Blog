@@ -4,7 +4,7 @@ import s from './styles.scss';
 
 class AsideBar extends Component {
   render() {
-    const { logoState } = this.props;
+    const { logoState } = this.context;
     const style = classnames(s.asidebar, {
       [s.open]: logoState,
     });
@@ -49,6 +49,9 @@ class AsideBar extends Component {
 
 AsideBar.propTypes = {
 
+};
+AsideBar.contextTypes = {
+  logoState: PropTypes.bool,
 };
 
 export default AsideBar;
