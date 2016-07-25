@@ -1,5 +1,3 @@
-@import '../../globalStyles/libs/index';
-
 $card-title-size: 30px; 
 
 .card {
@@ -71,7 +69,6 @@ $card-title-size: 30px;
   & h1 {
     font-family: _font(family-title);
     // font-family: raleway, sans-serif;
-    
     font-size: $card-title-size;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -79,7 +76,7 @@ $card-title-size: 30px;
     font-smooth: always;
   }
   & p {
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
     font-family: _font(family);
     font-weight: _font(weight);
     font-smooth: always;
@@ -87,6 +84,10 @@ $card-title-size: 30px;
     letter-spacing: _font(letter-spacing-small);
   }
   & small {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     color: $button;
+    // margin-bottom: _size(element-margin);
   }
 }

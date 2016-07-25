@@ -69,7 +69,16 @@ class Tabs extends Component {
   // }
 
   updatePointer(idx) {
-    // const startPoint = this.refs.tabs.getBoundingClientRect().left;
+    if (idx < 0) {
+      this.setState({
+        pointer: {
+          top: `${this.refs.navigation.getBoundingClientRect().height}px`,
+          left: '1500px',
+          width: '0px',
+        },
+      });
+      return;
+    }
     const label = this.refs.navigation.children[idx].getBoundingClientRect();
     this.setState({
       pointer: {
@@ -78,6 +87,7 @@ class Tabs extends Component {
         width: `${label.width}px`,
       },
     });
+    // const startPoint = this.refs.tabs.getBoundingClientRect().left;
   }
   searchActive() {
     this.setPointerState(this.props.path.length);

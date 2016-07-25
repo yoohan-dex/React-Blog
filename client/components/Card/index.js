@@ -4,13 +4,8 @@ import classnames from 'classnames';
 import s from './styles.scss';
 
 class Card extends Component {
-  constructor() {
-    super();
-  }
-  componentWillUnmount() {
-  }
   render() {
-    const { image, children } = this.props;
+    const { image, title, brief, date, genre, id } = this.props;
     const bgStyle = {
       backgroundImage: `url(${image})`,
     };
@@ -20,15 +15,12 @@ class Card extends Component {
 
     return (
       <div className={style}>
-        <Link to="/content">
-          <div style={bgStyle} className={s.cardMedia}>
-            <div className={s.content}></div>
-            {children}
-          </div>
+        <Link to={`/article/:${id}`}>
+          <div style={bgStyle} className={s.cardMedia} />
           <article className={s.article}>
-            <h1>It's Time To Improve Your Design Skills</h1>
-            <p>What do you think about it ? by the way I need some job , to save my life , all of time I spent to improve my develop skills but have no money? why?</p>
-            <small>sdfsdf</small>
+            <h1>{title}</h1>
+            <p>{brief}</p>
+            <small><time>{date}</time><span>{genre}</span></small>
           </article>
         </Link>
       </div>
@@ -36,9 +28,14 @@ class Card extends Component {
     );
   }
 }
-
+            // <div className={s.content}></div>
 Card.propTypes = {
-
+  image: PropTypes.string,
+  title: PropTypes.string,
+  brief: PropTypes.string,
+  date: PropTypes.string,
+  genre: PropTypes.string,
+  id: PropTypes.string,
 };
 
 Card.contextTypes = {

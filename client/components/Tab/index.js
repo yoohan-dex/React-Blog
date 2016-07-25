@@ -15,9 +15,7 @@ class Tab extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.active) {
-      this.props.updatePointer();
-    }
+    this.props.updatePointer();
   }
   
   handleClick(e) {

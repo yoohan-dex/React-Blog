@@ -56,6 +56,7 @@ export default {
     ],
   },
   sassLoader: {
+    data: '@import "' + path.resolve(__dirname, 'client/globalStyles/libs/index.scss') + '";',
     includePaths: /client/,
     outputStyle: 'compressed',
     sourceMap: true,

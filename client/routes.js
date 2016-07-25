@@ -10,7 +10,8 @@ import ArticlePage from './containers/ArticlePage';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Main} />
-    <Route path="content" component={ArticlePage} />
+    <Route path="content" component={Content} />
+    <Route path="article/:id" component={ArticlePage} />
     <Route path="search" component={ArticlePage} />
     <Route path="about" component={ArticlePage} />
   </Route>

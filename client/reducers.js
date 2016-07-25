@@ -2,6 +2,7 @@ import { fromJS } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import appReducer from './containers/App/reducer';
+import mainReducer from './containers/Main/reducer';
 const routeInitialState = fromJS({
   locationBeforeTransitions: null,
 });
@@ -31,5 +32,6 @@ export default function reducerCreator() {
     route: routeReducer,
     content: contentReducer,
     global: appReducer,
+    main: mainReducer,
   });
 }

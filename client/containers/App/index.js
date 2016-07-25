@@ -26,10 +26,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
 
     return (
       <Layout>
-        <Tabs path={path} menu={title}>
-          <Tab label="article" />
-          <Tab label="archives" />
-        </Tabs>
+        <Tabs path={path} menu={title} />
         <Stage>
           <AsideBar />
           {this.props.children}
@@ -47,4 +44,4 @@ function mapDispatchToProps(dispatch) {
     dispatch,
   };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: true })(App);

@@ -5,18 +5,18 @@ import s from './styles.scss';
 
 class Article extends Component {
   render() {
-    const { image, children, input } = this.props;
+    const { image, content, genre, date, title } = this.props;
     const bgStyle = {
       backgroundImage: `url(${image})`,
     };
     
     return (
       <article className={s.article}>
-        <div style={bgStyle} className={s.cardMedia}>
-
-        </div>
+        <div style={bgStyle} className={s.cardMedia} />
+        <div className={s.genre}><a>{genre}</a><time>{date}</time></div>
+        <div className={s.title}><h1>{title}</h1></div>
         <ReactMarkdown
-          source={input}
+          source={content}
           className={s.markdown}
           containerTagName="section"
 

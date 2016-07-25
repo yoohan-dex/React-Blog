@@ -11,36 +11,15 @@ class AsideBar extends Component {
     return (
       <aside id="asd" className={style}>
         <section>
-          <ul>
-            <li>hooo</li>
-            <li>yes</li>
-            <li>iam</li>
-            <li>yougo</li>
-            <li>hooo</li>
-            <li>yes</li>
-            <li>iam</li>
-            <li>yougo</li>
-            <li>hooo</li>
-            <li>yes</li>
-            <li>iam</li>
-            <li>yougo</li>
-            <li>hooo</li>
-            <li>yes</li>
-            <li>iam</li>
-            <li>yougo</li>
-            <li>hooo</li>
-            <li>yes</li>
-            <li>iam</li>
-            <li>yougo</li>
-            <li>hooo</li>
-            <li>yes</li>
-            <li>iam</li>
-            <li>yougo</li>
-            <li>hooo</li>
-            <li>yes</li>
-            <li>iam</li>
-            <li>yougo</li>
-          </ul>
+          <dl className={s.type}>
+            <dt>TYPE</dt>
+            <dd>JavaScript</dd>
+          </dl>
+          <dl className={s.type}>
+            <dt>TIME</dt>
+            <dd>2016</dd>
+            <dd>07/28</dd>
+          </dl>
         </section>
       </aside>
     );
