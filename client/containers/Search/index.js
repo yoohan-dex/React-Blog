@@ -62,4 +62,4 @@ Search.propTypes = {
   articles: PropTypes.array,
 };
 const mapStateToProps = searchSelector();
-export default connect(mapStateToProps)(Search);
+export default connect(mapStateToProps, null, null, { pure: true })(Search);
