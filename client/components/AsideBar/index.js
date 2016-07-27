@@ -28,14 +28,28 @@ class AsideBar extends Component {
     }
   }//  wait for a real routes for search.
   render() {
-    const { logoState } = this.context;
+    const { genres } = this.props;
+    const { logoState, router } = this.context;
     const style = classnames(s.asidebar, {
       [s.open]: logoState,
     });
 
-    const renderGenres = (genres, counts) =>
-      <dd>{genres} <span className={s.count}>{counts}</span></dd>;
-    const genres = this.props.genres.map(renderGenres);
+    // const renderGenres = (genres, counts) =>
+    //   <dd>{genres} <span className={s.count}>{counts}</span></dd>;
+    // const genres = this.props.genres.map(x => x);
+    const renderGenres = () => {
+      const counts = [];
+      for (const x in genres) {
+        counts.push(
+          <dd key={x} onClick={router.push.bind(null, `/genre/${x}`)}>
+            {`${x} `}
+            <span className={s.count}>
+              {genres[x]}
+            </span>
+          </dd>);
+      }
+      return counts;
+    };
     return (
       <aside id="asd" className={style}>
         <section>
@@ -47,7 +61,7 @@ class AsideBar extends Component {
         <section>
           <dl className={s.type}>
             <dt>TYPE</dt>
-            {genres}
+            {renderGenres().map(x => x)}
           </dl>
           <dl className={s.type}>
             <dt>TIME</dt>
@@ -67,7 +81,6 @@ AsideBar.contextTypes = {
   logoState: PropTypes.bool,
   handleLogo: PropTypes.func,
   router: PropTypes.object,
-
 };
 
 export default AsideBar;

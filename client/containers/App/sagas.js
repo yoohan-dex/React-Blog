@@ -19,7 +19,7 @@ function* getAppData() {
     const { articles } = data.objects.type;
     console.log(articles);
     const genres = articles.map(x => x.metafield.genre);
-    const counts = genres.reduce((pre, cur) => (pre[cur.value]++ || (pre[cur.value] = 1), pre), []);
+    const counts = genres.reduce((pre, cur) => (pre[cur.value]++ || (pre[cur.value] = 1), pre), {});
     console.log(counts);
     const afterSorted = articles.sort((x, y) => x.created < y.created);
     // console.log(afterSorted);
