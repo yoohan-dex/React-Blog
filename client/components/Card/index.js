@@ -15,11 +15,10 @@ class Card extends Component {
 
     return (
       <div className={style}>
-        <Link to={`/article/:${id}`}>
+        <Link to={`/article/${id}`} className={s.link}>
           <div style={bgStyle} className={s.cardMedia} />
           <article className={s.article}>
             <h1>{title}</h1>
-            <p>{brief}</p>
             <small><time>{date}</time><span>{genre}</span></small>
           </article>
         </Link>

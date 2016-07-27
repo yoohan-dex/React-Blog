@@ -14,7 +14,7 @@ class ArticlePage extends Component {
 
   }
   parseId(articles) {
-    const index = articles.findIndex(x => `:${x._id}` === this.props.params.id);
+    const index = articles.findIndex(x => `${x._id}` === this.props.params.id);
     return articles[index];
   }
   parseArticle({ title, created, content, metafield }) {

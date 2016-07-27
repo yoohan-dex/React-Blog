@@ -17,7 +17,10 @@
   display: flex;
   // padding-right: $nav-padding-right;
   flex-direction: row;
-
+  form {
+    display: flex;
+    flex-direction: row;
+  }
   button {
     background-color: $button;
     color: white;

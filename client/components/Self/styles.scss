@@ -1,0 +1,81 @@
+.self {
+  display: flex;
+  flex-direction: column;
+  flex-basis: percentage(1/2);
+  padding: 0 5%;
+  
+  @include breakpoint(medium) {
+    flex-basis: 100%;
+    padding: 0 1%;
+    
+  }
+
+}
+.aboutMe {
+  @include breakpoint(small) {
+    margin-top: 2em;
+  }
+  h1 {
+    float: left;
+    font-weight: _font(weight-bold);
+    font-family: _font(family-title);
+    font-size: 6em;
+    margin-bottom: 0;
+  }
+  .name {
+    float: left;
+    padding-top: 1.25em;
+    padding-left: 10px;
+    p {
+      font-family: _font(family-title);
+      font-weight: _font(weight-bold);
+      font-size: 2em;
+      color: $theme-white;
+      margin-bottom: 0;
+      line-height: 1.25em;
+
+    }
+  }
+  .introduction {
+    color: $theme-white;
+    clear: left;
+    padding: 2%;
+    p {
+        @include breakpoint(small) {
+        margin-bottom: 2em;
+      }
+    }
+  }
+  
+}
+.contact {
+  .title {
+    font-size: 4em;
+    font-family: _font(family-title);
+    font-weight: _font(weight-bold);
+    margin-bottom: 0;
+    
+  }
+  .link {
+    padding-left: 1%;
+    float: left;
+    color: $theme-white;
+    font-weight: _font(weight-bold);
+    font-size: 3em;
+    line-height: 1.25em;
+    margin-right: -5px;
+    a {
+      padding: 5px;
+      display: block;
+    }
+    .twitter:hover {
+      background-color: #1DA1F2;
+    }
+    .github:hover {
+      background-color: #333;
+    }
+    .wechat:hover {
+      background-color: #368C05;
+    }
+  }
+}

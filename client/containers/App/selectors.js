@@ -17,11 +17,17 @@ const titleSeletor = () => createSelector(
   globalState => globalState.get('title')
 );
 
+const genreSeletor = () => createSelector(
+  globalDomain(),
+  globalState => globalState.get('genres')
+);
+
 const appSeletor = () => createSelector(
   globalDomain(),
   readySeletor(),
   errorSeletor(),
   titleSeletor(),
+  genreSeletor(),
   substate => substate.toJS()
 );
 

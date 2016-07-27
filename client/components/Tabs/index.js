@@ -14,8 +14,9 @@ class Tabs extends Component {
     this.listenPointer = this.listenPointer.bind(this);
     this.setPointerState = this.setPointerState.bind(this);
     this.afterAllMounted = this.afterAllMounted.bind(this);
-    this.searchActive = this.searchActive.bind(this);
     this.renderNav = this.renderNav.bind(this);
+    this.searchData = this.searchData.bind(this);
+    this.search = this.search.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +35,7 @@ class Tabs extends Component {
     this.setState({
       index: -1,
       pointer: {},
+      searchData: undefined,
     });
   }
 
@@ -46,6 +48,10 @@ class Tabs extends Component {
     }
   }
   afterAllMounted() {
+    if (location.pathname.match(/search/)) {
+      this.setPointerState(this.props.path.length);
+      return;
+    }
     this.setPointerState(this.props.path
       .map(item => item.path)
       .indexOf(location.pathname));
@@ -89,8 +95,18 @@ class Tabs extends Component {
     });
     // const startPoint = this.refs.tabs.getBoundingClientRect().left;
   }
-  searchActive() {
-    this.setPointerState(this.props.path.length);
+  searchData(e) {
+    const data = e.target.value;
+    this.setState({
+      searchData: data,
+    });
+  }
+  search(e) {
+    e.preventDefault();
+    if (this.state.searchData !== undefined && this.state.searchData !== '') {
+      const path = `/search/${this.state.searchData}`;
+      this.context.router.push(path);
+    }
   }//  wait for a real routes for search.
 
   // renderHeaders(headers) {
@@ -128,8 +144,11 @@ class Tabs extends Component {
         <div className={s.wrapper} ref="tabs">
           <nav className={s.navigation} ref="navigation">
             {this.renderNav()}
-            <input key={2} type="text" placeholder="Search" />
-            <button onClick={this.searchActive}>✓</button>
+            <form onSubmit={this.search}>
+              <input key={this.props.path.length} onChange={this.searchData} type="text" placeholder="Search" />
+              <button onClick={this.search}>✓</button>
+            </form>
+            
 
           </nav>
           <span className={s.pointer} style={this.state.pointer} />
@@ -146,6 +165,7 @@ Tabs.propTypes = {
 };
 Tabs.contextTypes = {
   handleLogo: PropTypes.func,
+  router: PropTypes.object,
 };
 
 export default Tabs;

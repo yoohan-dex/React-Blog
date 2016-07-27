@@ -64,9 +64,14 @@ $card-title-size: 30px;
   }
 }
 .article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
+  flex-basis: 100%;
   margin: 3% 7%;
-  & h1 {
+  bottom: 0;
+  h1 {
     font-family: _font(family-title);
     // font-family: raleway, sans-serif;
     font-size: $card-title-size;
@@ -75,19 +80,17 @@ $card-title-size: 30px;
     font-weight: _font(weight-bold);
     font-smooth: always;
   }
-  & p {
-    margin-bottom: 30px;
-    font-family: _font(family);
-    font-weight: _font(weight);
-    font-smooth: always;
-    line-height: 130%;
-    letter-spacing: _font(letter-spacing-small);
-  }
-  & small {
+  small {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: $button;
     // margin-bottom: _size(element-margin);
   }
+}
+
+.link {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }

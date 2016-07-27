@@ -1,7 +1,7 @@
 export default [
   {
-    label: 'Content',
-    path: '/content',
+    label: 'About',
+    path: '/about',
   }, {
     label: 'Index',
     path: '/',

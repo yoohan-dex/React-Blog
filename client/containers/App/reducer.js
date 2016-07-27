@@ -3,7 +3,7 @@ import {
   LOADING_APP,
   LOADING_SUCCESS,
   LOADING_TITLE,
-  LOADING_ARTICLE,
+  LOADING_GENRE,
   LOADING_ERROR,
 } from './constants';
 
@@ -11,7 +11,9 @@ const initialState = fromJS({
   ready: false,
   title: '',
   error: '',
+  genres: {},
   article: [],
+  search: '',
   item_num: 5,
 });
 
@@ -25,6 +27,9 @@ function appReducer(state = initialState, action) {
     case LOADING_ERROR:
       return state
         .set('error', action.err);
+    case LOADING_GENRE:
+      return state
+        .set('genres', action.counts);
     // case LOADING_ARTICLE:
     //   return state
     //     .set('acticle', action.acticle);
