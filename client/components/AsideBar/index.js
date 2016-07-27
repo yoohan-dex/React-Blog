@@ -28,7 +28,7 @@ class AsideBar extends Component {
     }
   }//  wait for a real routes for search.
   render() {
-    const { genres } = this.props;
+    const { genres, dateGroup } = this.props;
     const { logoState, router } = this.context;
     const style = classnames(s.asidebar, {
       [s.open]: logoState,
@@ -50,6 +50,24 @@ class AsideBar extends Component {
       }
       return counts;
     };
+
+    const renderDate = () => {
+      const dates = dateGroup.map(x => new Date(x))
+      .map(x => x.getMonth())
+      .reduce((pre, cur) => (pre[cur]++ || (pre[cur] = 1), pre), {});
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+      const counts = [];
+      for (const x in dates) {
+        counts.push(
+          <dd key={x} onClick={router.push.bind(null, `/date/${x}`)}>
+            {`${months[x]} `}
+            <span className={s.count}>{dates[x]}</span>
+          </dd>
+        );
+      }
+      return counts;
+    };
+    // const Years = dateGroup.map(x => new Date(x)).map(x => x.getYear()).length;
     return (
       <aside id="asd" className={style}>
         <section>
@@ -65,14 +83,14 @@ class AsideBar extends Component {
           </dl>
           <dl className={s.type}>
             <dt>TIME</dt>
-            <dd>2016 <span className={s.count}>2</span></dd>
-            <dd>JAN <span className={s.count}>2</span></dd>
+            {renderDate().map(x => x)}
           </dl>
         </section>
       </aside>
     );
   }
 }
+            // <dd>2016 <span className={s.count}>{Years}</span></dd>
 
 AsideBar.propTypes = {
 

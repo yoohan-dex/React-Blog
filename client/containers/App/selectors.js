@@ -2,32 +2,38 @@ import { createSelector } from 'reselect';
 
 const globalDomain = () => state => state.get('global');
 
-const readySeletor = () => createSelector(
+const readySelector = () => createSelector(
   globalDomain(),
   s => s.get('ready')
 );
 
-const errorSeletor = () => createSelector(
+const errorSelector = () => createSelector(
   globalDomain(),
   globalState => globalState.get('error')
 );
 
-const titleSeletor = () => createSelector(
+const titleSelector = () => createSelector(
   globalDomain(),
   globalState => globalState.get('title')
 );
 
-const genreSeletor = () => createSelector(
+const genreSelector = () => createSelector(
   globalDomain(),
   globalState => globalState.get('genres')
 );
 
-const appSeletor = () => createSelector(
+const dateGroupSelector = () => createSelector(
   globalDomain(),
-  readySeletor(),
-  errorSeletor(),
-  titleSeletor(),
-  genreSeletor(),
+  globalState => globalState.get('dateGroup')
+);
+
+const appSelector = () => createSelector(
+  globalDomain(),
+  readySelector(),
+  errorSelector(),
+  titleSelector(),
+  genreSelector(),
+  dateGroupSelector(),
   substate => substate.toJS()
 );
 
@@ -47,10 +53,10 @@ const selectLocationState = () => {
   };
 };
 
-export default appSeletor;
+export default appSelector;
 export {
   selectLocationState,
-  readySeletor,
-  errorSeletor,
-  titleSeletor,
+  readySelector,
+  errorSelector,
+  titleSelector,
 };

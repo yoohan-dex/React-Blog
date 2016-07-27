@@ -18,9 +18,28 @@ class Search extends Component {
   }
 
   render() {
-    const str = new RegExp(this.props.params.slug, 'i');
-    const match = this.props.articles.filter(x => x.title.match(str));
-    const cards = match.map(this.parseArticles);
+    const matchCard = () => {
+      let match;
+      let cards = [];
+      if (this.props.params.slug) {
+        const str = new RegExp(this.props.params.slug, 'i');
+        match = this.props.articles.filter(x => x.title.match(str));
+      }
+      if (this.props.params.genre) {
+        match = this.props.articles.filter(x => x.metafield.genre.value === this.props.params.genre);
+      }
+      if (this.props.params.date) {
+        match = this.props.articles.filter(x => {
+          const time = new Date(x.created);
+          const months = time.getMonth();
+          return parseInt(this.props.params.date, 10) === months;
+        });
+      }
+      cards = match.map(this.parseArticles);
+      return cards;
+    };
+
+
     const renderCard = ({ title, id, date, brief, genre, image }, key) =>
       <Card
         key={key}
@@ -33,7 +52,7 @@ class Search extends Component {
       />;
     return (
       <Panel>
-        {cards.map(renderCard)}
+        {matchCard().map(renderCard)}
       </Panel>
     );
   }
