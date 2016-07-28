@@ -1,0 +1,7 @@
+.card {};
+.card-enter {
+  opacity: 0.01;
+}
+.card-enter.card-enter-active {
+  opacity: 1;
+}

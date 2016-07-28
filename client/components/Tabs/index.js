@@ -63,7 +63,6 @@ class Tabs extends Component {
   handleHeaderClick(idx) {
     if (this.props.onChange) this.props.onChange(idx);
     if (window.innerWidth <= 736 && this.context.logoState) {
-      console.log(this.context.logoState);
       this.context.handleLogo();
     }
   }
@@ -152,7 +151,6 @@ class Tabs extends Component {
               <input key={this.props.path.length} onChange={this.searchData} type="text" placeholder="Search" />
               <button onClick={this.search}>✓</button>
             </form>
-            {console.log(this.context.logoState)}
 
           </nav>
           <span className={s.pointer} style={this.state.pointer} />

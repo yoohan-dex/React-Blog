@@ -5,7 +5,8 @@
   }
 }
 body {
-  background-color: #3F406A;
+  background-color: $bg;
+  background-image: url("./overlay.png");
   width: 100%;
   overflow-x: hidden; 
 

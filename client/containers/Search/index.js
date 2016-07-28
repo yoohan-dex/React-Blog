@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Card from '../../components/Card';
 import Panel from '../../components/Panel';
 import searchSelector from '../Main/selectors';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
+
 
 class Search extends Component {
   parseArticles({ title, created, _id, metafield }) {
@@ -51,9 +53,14 @@ class Search extends Component {
         image={image}
       />;
     return (
-      <Panel>
+      <CSSTransitionGroup
+        component={Panel}
+        transitionName="card"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+      >
         {matchCard().map(renderCard)}
-      </Panel>
+      </CSSTransitionGroup>
     );
   }
 }

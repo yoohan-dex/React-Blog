@@ -1,9 +1,18 @@
 $card-title-size: 30px; 
 
+@keyframes comming {
+  from { transform: scale(1.5) translate(10%); opacity: 0.1; }
+  to { transform: scale(1) translate(0); opacity: 1;}
+}
+
 .card {
   border-radius: 0;
   display: flex;
   margin: 0.5%;
+
+
+
+
   box-shadow: 0 2px 5px rgba(0,0,0,.26);
   flex-direction: column;
   background: $card;
@@ -93,4 +102,7 @@ $card-title-size: 30px;
   display: flex;
   height: 100%;
   flex-direction: column;
+}
+.cardMain {
+  animation: comming .5s $animation-curve-default;  
 }

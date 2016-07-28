@@ -4,13 +4,18 @@ import classnames from 'classnames';
 import s from './styles.scss';
 
 class Card extends Component {
+
+  componentWillUnmount() {
+    console.log('yed');
+  }
   render() {
-    const { image, title, brief, date, genre, id } = this.props;
+    const { image, title, brief, date, genre, id, main } = this.props;
     const bgStyle = {
       backgroundImage: `url(${image})`,
     };
     const style = classnames(s.card, {
       [s.cardStrink]: this.context.logoState && window.innerWidth > 736,
+      [s.cardMain]: main,
     });
 
     return (

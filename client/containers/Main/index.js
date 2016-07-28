@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Card from '../../components/Card';
 import Panel from '../../components/Panel';
 import mainSelector from './selectors';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Main extends Component {
   parseArticles({ title, created, _id, metafield }) {
@@ -28,6 +29,7 @@ class Main extends Component {
         brief={brief}
         genre={genre}
         image={image}
+        main
       />;
     return (
       <Panel>
