@@ -41,4 +41,4 @@ Main.propTypes = {
   articles: PropTypes.array,
 };
 const mapStateToProps = mainSelector();
-export default connect(mapStateToProps, null, null, { pure: true })(Main);
+export default connect(mapStateToProps, null, null, { pure: false })(Main);
