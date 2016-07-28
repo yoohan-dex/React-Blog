@@ -11,6 +11,7 @@ class AsideBar extends Component {
 
     this.search = this.search.bind(this);
     this.searchData = this.searchData.bind(this);
+    this.closeAndGo = this.closeAndGo.bind(this);
   }
 
   searchData(e) {
@@ -22,14 +23,23 @@ class AsideBar extends Component {
   search(e) {
     e.preventDefault();
     if (this.state.searchData !== undefined && this.state.searchData !== '') {
-      this.context.handleLogo();
+      if (window.innerWidth <= 736) {
+        this.context.handleLogo();
+      }
       const path = `/search/${this.state.searchData}`;
       this.context.router.push(path);
     }
   }//  wait for a real routes for search.
+  closeAndGo(url) {
+    if (window.innerWidth <= 736) {
+      this.context.handleLogo();
+    }
+    this.context.router.push(url);
+  }
+
   render() {
     const { genres, dateGroup } = this.props;
-    const { logoState, router } = this.context;
+    const { logoState } = this.context;
     const style = classnames(s.asidebar, {
       [s.open]: logoState,
     });
@@ -41,7 +51,7 @@ class AsideBar extends Component {
       const counts = [];
       for (const x in genres) {
         counts.push(
-          <dd key={x} onClick={router.push.bind(null, `/genre/${x}`)}>
+          <dd key={x} onClick={this.closeAndGo.bind(null, `/genre/${x}`)}>
             {`${x} `}
             <span className={s.count}>
               {genres[x]}
@@ -59,7 +69,7 @@ class AsideBar extends Component {
       const counts = [];
       for (const x in dates) {
         counts.push(
-          <dd key={x} onClick={router.push.bind(null, `/date/${x}`)}>
+          <dd key={x} onClick={this.closeAndGo.bind(null, `/date/${x}`)}>
             {`${months[x]} `}
             <span className={s.count}>{dates[x]}</span>
           </dd>

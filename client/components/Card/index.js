@@ -10,7 +10,7 @@ class Card extends Component {
       backgroundImage: `url(${image})`,
     };
     const style = classnames(s.card, {
-      [s.cardStrink]: this.context.logoState,
+      [s.cardStrink]: this.context.logoState && window.innerWidth > 736,
     });
 
     return (
