@@ -2,8 +2,7 @@
 @import "./_vars.scss";
 @import "./_functions.scss";
 @import "./_mixins.scss";
-@import "./skel.scss";
-
+@import "./_skel.scss";
 @include skel-breakpoints((
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1368px)',
@@ -11,17 +10,6 @@
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)',
 		xxsmall: '(max-width: 360px)'
-	));
-
-	@include skel-layout((
-		reset: 'full',
-		boxModel: 'border',
-		grid: ( gutters: 1.5em ),
-		breakpoints: (
-			small: (
-				grid: ( gutters: 1em ),
-			)
-		)
 	));
 
 	@mixin color($p) {

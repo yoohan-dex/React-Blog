@@ -36,17 +36,7 @@
   }
 }
 
-.gauss {
-  position: fixed;
-  width: 200%;
-  height: 100%;
-  z-index: 3000;
-  opacity: 0;
-  transition-timing-function: $animation-curve-default;
-  transition-duration: $animation-duration;
-  transition-property: opacity;
-  background-image: url('./gauss.svg');
-}
+
 .filter {
   opacity: 1;
 }

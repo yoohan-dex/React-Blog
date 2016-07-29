@@ -15,7 +15,7 @@ export function search(slug) {
   return {
     type: SEARCH_ARTICLE,
     slug,
-  }
+  };
 }
 
 

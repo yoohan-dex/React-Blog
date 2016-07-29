@@ -11,7 +11,6 @@ import storeCreator from './store';
 import { selectLocationState } from './containers/App/selectors';
 import appSaga from './containers/App/sagas';
 
-import './globalStyles/font.css';
 import './globalStyles/index.scss';
 const initialState = {};
 const store = storeCreator(initialState, browserHistory);
