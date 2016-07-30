@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build && npm run start:prod",
     "start:dev": "cross-env NODE_ENV=development ENABLE_TUNNEL=true nodemon --watch server --exec babel-node -- server",
-    "start:prod": "cross-env NODE_ENV=production babel-node server",
+    "start:prod": "cross-env NODE_ENV=production node app.js",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.babel.js --color -p"
   },
   "author": "",
@@ -40,6 +40,7 @@
     "webpack-hot-middleware": "^2.12.1"
   },
   "dependencies": {
+    "babel": "^6.5.2",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
