@@ -5,11 +5,12 @@ $card-title-size: 30px;
   to { transform: scale(1) translate(0); opacity: 1;}
 }
 
+
 .card {
   border-radius: 0;
   display: flex;
   margin: 0.5%;
-
+  
 
 
 
@@ -105,4 +106,17 @@ $card-title-size: 30px;
 }
 .cardMain {
   animation: comming .5s $animation-curve-default;  
+}
+:global{
+  .card-enter {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  .card-enter.card-enter-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .card-leave {
+    opacity: 0.1;
+  }
 }

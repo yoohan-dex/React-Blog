@@ -4,9 +4,28 @@ import Card from '../../components/Card';
 import Panel from '../../components/Panel';
 import searchSelector from '../Main/selectors';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
+import config from '../config';
+
+const months =
+['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 
 class Search extends Component {
+  componentDidMount() {
+    document.title =
+    `${this.props.params.slug
+      || months[this.props.params.date]
+      || this.props.params.genre
+    } - ${config.site.title} `;
+  }
+  componentDidUpdate() {
+    document.title =
+    `${this.props.params.slug
+      || months[this.props.params.date]
+      || this.props.params.genre
+    } - ${config.site.title} `;
+  }
+
   parseArticles({ title, created, _id, metafield }) {
     const card = {};
     const time = new Date(created);

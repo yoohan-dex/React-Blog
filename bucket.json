@@ -1,0 +1,223 @@
+{
+  "bucket": {
+    "_id": "579063e00c64614e7a0004f2",
+    "slug": "aooren",
+    "title": "AooReN",
+    "object_types": [
+      {
+        "title": "Globals",
+        "slug": "globals",
+        "singular": "Globals",
+        "metafields": [
+          {
+            "edit": 1,
+            "value": "Aooren - Blog",
+            "key": "site_title",
+            "title": "Site Title",
+            "type": "textarea",
+            "children": null
+          },
+          {
+            "edit": 1,
+            "value": "AooReN",
+            "key": "menu_tilte",
+            "title": "Menu Tilte",
+            "type": "textarea",
+            "children": null
+          }
+        ],
+        "options": {
+          "slug_field": 1,
+          "content_editor": 1,
+          "add_metafields": 1,
+          "metafields_title": 1,
+          "metafields_key": 1
+        }
+      },
+      {
+        "title": "Articles",
+        "slug": "articles",
+        "singular": "Articles",
+        "metafields": [],
+        "options": {
+          "slug_field": 1,
+          "content_editor": 1,
+          "add_metafields": 1,
+          "metafields_title": 1,
+          "metafields_key": 1
+        }
+      }
+    ],
+    "objects": [
+      {
+        "_id": "5798b79fed7a775367002223",
+        "order": 0,
+        "slug": "this-is-my-first-article-in-this-blog-epf5adc68kdp",
+        "title": "This Is My First Article In This Blog (Copy)",
+        "content": "## 这是一个简历静态页面生成器。\r\n\r\n* 从`resume.js`文件中取出数据，自动填充数据并排版\r\n* 使用`React`和`Sass`制作，`Webpack`作为自动化工具\r\n* 可以一行命令部署到page服务器\r\n\r\n## A generator of static resume page \r\n* Retrieves data from `resume.js` to build an exactly beautiful Web page\r\n* Built with `React`, `Sass` and `Webpack` \r\n* Deploy to `GitHub-page` just one command line\r\n\r\n## 环境要求\r\n\r\n1. [node.js &gt;=4.4](https://nodejs.org/en/)\r\n2. [Ruby编程语言](https://www.ruby-lang.org/zh_cn/)\r\n3. 若要自动部署到page服务器得先存到自己的github上，并且开启SSH Keys\r\n\r\n## Requirements\r\n1. [node.js &gt;=4.4](https://nodejs.org/en/)\r\n2. [Ruby lang](https://www.ruby-lang.org/)\r\n3. For deploying, you should fork the repo to your GitHub and it depends on SSH Keys.  \r\n\r\n## 安装与部署\r\n\r\n1. 点击`fork`之后在自己的仓库`git clone`到本地\r\n2. 在Teminal执行`npm install`\r\n3. 再执行`npm start`可以启动热加载服务器，\r\n进入[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/)可以预览内容\r\n4. 修改根目录下的`resume.js`文件\r\n5. 执行`npm run prod`生成静态文件到根目录下的`build`文件夹中\r\n6. 执行`npm run deploy`可push到当前仓库的`gh-page`的branch\r\n\r\n## Quick Start\r\n\r\n1. After `fork` go to your Github `git clone` to your workspace\r\n2. Run `npm install` on Terminal\r\n3. Use `npm start` you can setup hot-load server for page,then you can check[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) \r\n4. Modify `resume.js` found from the root directory.\r\n5. Run `npm run prod` will quickly generate a static HTML file to `build` directory\r\n6. Run `npm run deploy` will push into recent repo's `gh-page` branch\r\n\r\n## 反馈\r\n\r\n 若使用中有任何问题，欢迎反馈，可以在DEMO中找到我的联系方式\r\n\r\n## Feedback\r\n\r\n Welcome feedback if you have any problems and the demo has all my contact  \r\n",
+        "metafields": [
+          {
+            "value": "Sass",
+            "key": "genre",
+            "title": "This Is My First Article In This Blog",
+            "type": "text",
+            "children": false
+          },
+          {
+            "value": "4724b820-516e-11e6-9e30-fb7e1b19bdc0-redux_react.jpg",
+            "key": "image",
+            "title": "This Is My First Article In This Blog",
+            "type": "file",
+            "children": false
+          },
+          {
+            "value": "This project I spent two weeks to finish, just for some people can easily build a resume a moment and some novices to learn.",
+            "key": "brief",
+            "title": "This Is My First Article In This Blog",
+            "type": "textarea",
+            "children": false
+          }
+        ],
+        "bucket": "579063e00c64614e7a0004f2",
+        "type_slug": "articles",
+        "created": "2016-07-27T13:31:11.231Z",
+        "user_id": "5766613184166cb77a000002",
+        "options": {
+          "slug_field": 1,
+          "content_editor": 1
+        },
+        "status": "published",
+        "modified": "2016-07-27T13:31:30.372Z"
+      },
+      {
+        "_id": "5794a1b01d63ddee30000b28",
+        "order": 0,
+        "slug": "second-article-in-this-blog",
+        "title": "Second Article In This Blog",
+        "content": "## 这是一个简历静态页面生成器。\r\n\r\n* 从`resume.js`文件中取出数据，自动填充数据并排版\r\n* 使用`React`和`Sass`制作，`Webpack`作为自动化工具\r\n* 可以一行命令部署到page服务器\r\n\r\n## A generator of static resume page \r\n* Retrieves data from `resume.js` to build an exactly beautiful Web page\r\n* Built with `React`, `Sass` and `Webpack` \r\n* Deploy to `GitHub-page` just one command line\r\n\r\n## 环境要求\r\n\r\n1. [node.js &gt;=4.4](https://nodejs.org/en/)\r\n2. [Ruby编程语言](https://www.ruby-lang.org/zh_cn/)\r\n3. 若要自动部署到page服务器得先存到自己的github上，并且开启SSH Keys\r\n\r\n## Requirements\r\n1. [node.js &gt;=4.4](https://nodejs.org/en/)\r\n2. [Ruby lang](https://www.ruby-lang.org/)\r\n3. For deploying, you should fork the repo to your GitHub and it depends on SSH Keys.  \r\n\r\n## 安装与部署\r\n\r\n1. 点击`fork`之后在自己的仓库`git clone`到本地\r\n2. 在Teminal执行`npm install`\r\n3. 再执行`npm start`可以启动热加载服务器，\r\n进入[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/)可以预览内容\r\n4. 修改根目录下的`resume.js`文件\r\n5. 执行`npm run prod`生成静态文件到根目录下的`build`文件夹中\r\n6. 执行`npm run deploy`可push到当前仓库的`gh-page`的branch\r\n\r\n## Quick Start\r\n\r\n1. After `fork` go to your Github `git clone` to your workspace\r\n2. Run `npm install` on Terminal\r\n3. Use `npm start` you can setup hot-load server for page,then you can check[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) \r\n4. Modify `resume.js` found from the root directory.\r\n5. Run `npm run prod` will quickly generate a static HTML file to `build` directory\r\n6. Run `npm run deploy` will push into recent repo's `gh-page` branch\r\n\r\n## 反馈\r\n\r\n 若使用中有任何问题，欢迎反馈，可以在DEMO中找到我的联系方式\r\n\r\n## Feedback\r\n\r\n Welcome feedback if you have any problems and the demo has all my contact  \r\n",
+        "metafields": [
+          {
+            "value": "JavaScript",
+            "key": "genre",
+            "title": "This Is My First Article In This Blog",
+            "type": "text",
+            "children": false
+          },
+          {
+            "value": "4724b820-516e-11e6-9e30-fb7e1b19bdc0-redux_react.jpg",
+            "key": "image",
+            "title": "This Is My First Article In This Blog",
+            "type": "file",
+            "children": false
+          },
+          {
+            "value": "This project I spent two weeks to finish, just for some people can easily build a resume a moment and some novices to learn.",
+            "key": "brief",
+            "title": "This Is My First Article In This Blog",
+            "type": "textarea",
+            "children": false
+          }
+        ],
+        "bucket": "579063e00c64614e7a0004f2",
+        "type_slug": "articles",
+        "created": "2016-07-24T11:08:32.775Z",
+        "user_id": "5766613184166cb77a000002",
+        "options": {
+          "slug_field": 1,
+          "content_editor": 1
+        },
+        "status": "published",
+        "modified": "2016-07-24T11:21:47.119Z"
+      },
+      {
+        "_id": "5791abe00c64614e7a0023c1",
+        "order": 0,
+        "slug": "this-is-my-first-article-in-this-blog",
+        "title": "This Is My First Article In This Blog",
+        "content": "## 这是一个简历静态页面生成器。\r\n\r\n* 从`resume.js`文件中取出数据，自动填充数据并排版\r\n* 使用`React`和`Sass`制作，`Webpack`作为自动化工具\r\n* 可以一行命令部署到page服务器\r\n\r\n## A generator of static resume page \r\n* Retrieves data from `resume.js` to build an exactly beautiful Web page\r\n* Built with `React`, `Sass` and `Webpack` \r\n* Deploy to `GitHub-page` just one command line\r\n\r\n## 环境要求\r\n\r\n1. [node.js &gt;=4.4](https://nodejs.org/en/)\r\n2. [Ruby编程语言](https://www.ruby-lang.org/zh_cn/)\r\n3. 若要自动部署到page服务器得先存到自己的github上，并且开启SSH Keys\r\n\r\n## Requirements\r\n1. [node.js &gt;=4.4](https://nodejs.org/en/)\r\n2. [Ruby lang](https://www.ruby-lang.org/)\r\n3. For deploying, you should fork the repo to your GitHub and it depends on SSH Keys.  \r\n\r\n## 安装与部署\r\n\r\n1. 点击`fork`之后在自己的仓库`git clone`到本地\r\n2. 在Teminal执行`npm install`\r\n3. 再执行`npm start`可以启动热加载服务器，\r\n进入[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/)可以预览内容\r\n4. 修改根目录下的`resume.js`文件\r\n5. 执行`npm run prod`生成静态文件到根目录下的`build`文件夹中\r\n6. 执行`npm run deploy`可push到当前仓库的`gh-page`的branch\r\n\r\n## Quick Start\r\n\r\n1. After `fork` go to your Github `git clone` to your workspace\r\n2. Run `npm install` on Terminal\r\n3. Use `npm start` you can setup hot-load server for page,then you can check[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) \r\n4. Modify `resume.js` found from the root directory.\r\n5. Run `npm run prod` will quickly generate a static HTML file to `build` directory\r\n6. Run `npm run deploy` will push into recent repo's `gh-page` branch\r\n\r\n## 反馈\r\n\r\n 若使用中有任何问题，欢迎反馈，可以在DEMO中找到我的联系方式\r\n\r\n## Feedback\r\n\r\n Welcome feedback if you have any problems and the demo has all my contact  \r\n",
+        "metafields": [
+          {
+            "value": "JavaScript",
+            "key": "genre",
+            "title": "This Is My First Article In This Blog",
+            "type": "text",
+            "children": false
+          },
+          {
+            "value": "4724b820-516e-11e6-9e30-fb7e1b19bdc0-redux_react.jpg",
+            "key": "image",
+            "title": "This Is My First Article In This Blog",
+            "type": "file",
+            "children": false
+          },
+          {
+            "edit": 1,
+            "value": "This project I spent two weeks to finish, just for some people can easily build a resume a moment and some novices to learn.",
+            "key": "brief",
+            "title": "This Is My First Article In This Blog",
+            "type": "textarea",
+            "children": null
+          }
+        ],
+        "bucket": "579063e00c64614e7a0004f2",
+        "type_slug": "articles",
+        "created": "2016-07-22T05:15:12.146Z",
+        "user_id": "5766613184166cb77a000002",
+        "options": {
+          "slug_field": 1,
+          "content_editor": 1
+        },
+        "status": "published",
+        "modified": "2016-07-24T09:00:13.334Z"
+      },
+      {
+        "_id": "5791a9380c64614e7a002388",
+        "order": 0,
+        "slug": "text",
+        "title": "Text",
+        "content": "",
+        "metafields": [
+          {
+            "edit": 1,
+            "value": "aooren - blog",
+            "key": "site_title",
+            "title": "Site Title",
+            "type": "text",
+            "children": null
+          },
+          {
+            "edit": 1,
+            "value": "AooReN",
+            "key": "menu_title",
+            "title": "Menu Title",
+            "type": "text",
+            "children": null
+          }
+        ],
+        "bucket": "579063e00c64614e7a0004f2",
+        "type_slug": "globals",
+        "created": "2016-07-22T05:03:52.874Z",
+        "user_id": "5766613184166cb77a000002",
+        "options": {
+          "slug_field": 1,
+          "content_editor": 1
+        },
+        "status": "published",
+        "modified": "2016-07-22T07:29:09.062Z"
+      }
+    ],
+    "media": [
+      {
+        "_id": "57946adc1d63ddee3000069a",
+        "name": "4724b820-516e-11e6-9e30-fb7e1b19bdc0-redux_react.jpg",
+        "original_name": "redux_react.jpg",
+        "size": 36969,
+        "type": "image/jpeg",
+        "bucket": "579063e00c64614e7a0004f2",
+        "created": "2016-07-24T07:14:36.327Z",
+        "folder": null,
+        "location": "https://cosmicjs.com/uploads"
+      }
+    ]
+  }
+}

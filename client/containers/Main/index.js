@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import Card from '../../components/Card';
 import Panel from '../../components/Panel';
 import mainSelector from './selectors';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
-
+import config from '../config';
 class Main extends Component {
+  componentDidMount() {
+    document.title = config.site.title;
+  }
   parseArticles({ title, created, _id, metafield }) {
     const card = {};
     const time = new Date(created);

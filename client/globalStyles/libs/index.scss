@@ -28,14 +28,3 @@ $font-weight-semi-bold: 400;
 $tab-text-inactive-color: $button;
 
 
-.card-enter {
-	opacity: 0;
-	transform: scale(1.5);
-}
-.card-enter.card-enter-active {
-	opacity: 1;
-	transform: scale(1);
-}
-.card-leave {
-	opacity: 0.1;
-}

@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import Panel from '../../components/Panel';
 import Article from '../../components/Article';
 import articlePageSelector from './selectors';
+import config from '../config';
 class ArticlePage extends Component {
   constructor() {
     super();
     this.parseId = this.parseId.bind(this);
   }
   componentDidMount() {
-
+    document.title = `${this.parseId(this.props.articles).title} - ${config.site.title}`;
   }
   parseId(articles) {
     const index = articles.findIndex(x => `${x._id}` === this.props.params.id);
