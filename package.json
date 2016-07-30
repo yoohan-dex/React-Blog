@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development ENABLE_TUNNEL=true nodemon --watch server --exec babel-node -- server",
-    "start:production": "npm run build && npm run start:prod",
+    "start": "npm run build && npm run start:prod",
+    "start:dev": "cross-env NODE_ENV=development ENABLE_TUNNEL=true nodemon --watch server --exec babel-node -- server",
     "start:prod": "cross-env NODE_ENV=production babel-node server",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.babel.js --color -p"
   },
