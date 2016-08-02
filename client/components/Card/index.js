@@ -5,9 +5,7 @@ import s from './styles.scss';
 
 class Card extends Component {
 
-  componentWillUnmount() {
-    console.log('yed');
-  }
+
   render() {
     const { image, title, brief, date, genre, id, main } = this.props;
     const bgStyle = {
@@ -40,6 +38,7 @@ Card.propTypes = {
   date: PropTypes.string,
   genre: PropTypes.string,
   id: PropTypes.string,
+  main: PropTypes.bool,
 };
 
 Card.contextTypes = {
