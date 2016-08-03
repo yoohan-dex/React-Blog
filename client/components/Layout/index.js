@@ -32,7 +32,7 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
-
+  children: PropTypes.node,
 };
 Layout.childContextTypes = {
   logoState: PropTypes.bool,

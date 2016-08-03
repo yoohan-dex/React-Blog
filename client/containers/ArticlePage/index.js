@@ -46,7 +46,8 @@ class ArticlePage extends Component {
 }
 
 ArticlePage.propTypes = {
-
+  articles: PropTypes.array,
+  params: PropTypes.object,
 };
 const mapStateToProps = articlePageSelector();
 export default connect(mapStateToProps)(ArticlePage);

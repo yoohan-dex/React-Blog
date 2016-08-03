@@ -10,34 +10,34 @@ class Tab extends Component {
     this.setTimetoUpdate = this.setTimetoUpdate.bind(this);
   }
   componentDidMount() {
-    // this.props.updatePointer(this.props.paths.indexOf(this.props.path));
     this.setTimetoUpdate();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     this.props.updatePointer();
   }
-  
+
+  setTimetoUpdate() {
+    return setTimeout(this.props.updatePointer, 2000);
+  }
   handleClick(e) {
     if (this.props.onClick) {
       this.props.onClick(e);
     }
   }
-  setTimetoUpdate() {
-    return setTimeout(this.props.updatePointer, 2000);
-  }
-  
-
   render() {
-    const { active, updatePointer } = this.props;
+    const { active } = this.props;
     const style = classnames(s.label, {
       [s.active]: active,
     });
     return (
-
-            
-          <Link className={style} to={this.props.path} onClick={this.handleClick}>{this.props.label}</Link>
-
+      <Link
+        className={style}
+        to={this.props.path}
+        onClick={this.handleClick}
+      >
+      {this.props.label}
+      </Link>
     );
   }
 }
@@ -48,7 +48,8 @@ Tab.propTypes = {
   active: PropTypes.bool,
   onActive: PropTypes.func,
   onClick: PropTypes.func,
-  afterAllMounted: PropTypes.func,
+  updatePointer: PropTypes.func,
+  path: PropTypes.string,
 };
 
 Tab.defaultProps = {

@@ -43,10 +43,6 @@ class AsideBar extends Component {
     const style = classnames(s.asidebar, {
       [s.open]: logoState,
     });
-
-    // const renderGenres = (genres, counts) =>
-    //   <dd>{genres} <span className={s.count}>{counts}</span></dd>;
-    // const genres = this.props.genres.map(x => x);
     const renderGenres = () => {
       const counts = [];
       for (const x in genres) {

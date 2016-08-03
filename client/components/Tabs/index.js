@@ -21,15 +21,7 @@ class Tabs extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.listenPointer, false);
-    // this.timeoutPointer();
-    // setTimeout(this.afterAllMounted, 1000);
-    // this.setPointerState(this.props.path.indexOf(location.pathname));
-    // this.updatePointer(this.props.path.indexOf(location.pathname));
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.updatePointer(this.state.index);
-  // }
 
   componentWillUnmount() {
     this.setState({
@@ -38,7 +30,6 @@ class Tabs extends Component {
       searchData: undefined,
     });
   }
-
 
   setPointerState(idx) {
     if (idx !== this.state.index) {
@@ -67,16 +58,6 @@ class Tabs extends Component {
     }
   }
 
-
-  // parseChildren() {
-  //   const headers = [];
-
-  //   React.Children.forEach(this.props.children, item => {
-  //     headers.push(item);
-  //   });
-  //   return headers;
-  // }
-
   updatePointer(idx) {
     if (idx < 0) {
       this.setState({
@@ -96,7 +77,6 @@ class Tabs extends Component {
         width: `${label.width}px`,
       },
     });
-    // const startPoint = this.refs.tabs.getBoundingClientRect().left;
   }
   searchData(e) {
     const data = e.target.value;
@@ -110,20 +90,7 @@ class Tabs extends Component {
       const path = `/search/${this.state.searchData}`;
       this.context.router.push(path);
     }
-  }//  wait for a real routes for search.
-
-  // renderHeaders(headers) {
-  //   return headers.map((item, idx) =>
-  //     React.cloneElement(item, {
-  //       key: idx,
-  //       // active: this.state.index === idx,
-  //       active: location.pathname === this.props.path[idx],
-  //       onClick: this.handleHeaderClick.bind(this, idx, item),
-  //       path: this.props.path[idx],
-  //       timeoutPointer: this.timeoutPointer,
-  //     })
-  //   );
-  // }
+  }
 
   renderNav() {
     return this.props.path.map((item, idx) =>
@@ -135,7 +102,6 @@ class Tabs extends Component {
         updatePointer={this.afterAllMounted}
         onClick={this.handleHeaderClick}
       />
-
     );
   }
 
@@ -151,7 +117,6 @@ class Tabs extends Component {
               <input key={this.props.path.length} onChange={this.searchData} type="text" placeholder="Search" />
               <button onClick={this.search}>✓</button>
             </form>
-
           </nav>
           <span className={s.pointer} style={this.state.pointer} />
 
@@ -164,6 +129,7 @@ Tabs.propTypes = {
   children: PropTypes.node,
   path: PropTypes.array,
   onChange: PropTypes.func,
+  menu: PropTypes.string,
 };
 Tabs.contextTypes = {
   logoState: PropTypes.bool,

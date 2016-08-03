@@ -10,11 +10,13 @@ class Article extends Component {
     const bgStyle = {
       backgroundImage: `url(${image})`,
     };
-    
+
     return (
       <article className={s.article}>
         <div style={bgStyle} className={s.cardMedia} />
-        <div className={s.genre}><a onClick={router.push.bind(null, `/genre/${genre}`)}>{genre}</a><time>{date}</time></div>
+        <div className={s.genre}>
+          <a onClick={router.push.bind(null, `/genre/${genre}`)}>{genre}</a><time>{date}</time>
+        </div>
         <div className={s.title}><h1>{title}</h1></div>
         <ReactMarkdown
           source={content}
@@ -28,7 +30,11 @@ class Article extends Component {
 }
 
 Article.propTypes = {
-
+  image: PropTypes.string,
+  content: PropTypes.string,
+  genre: PropTypes.string,
+  date: PropTypes.string,
+  title: PropTypes.string,
 };
 
 Article.contextTypes = {

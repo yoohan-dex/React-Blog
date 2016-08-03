@@ -22,7 +22,6 @@ function* getAppData() {
   try {
     let { data } = yield call(request, endpointCreator('objects', config));
     data = parseData(data);
-    console.log(data.objects.type);
     const { articles, globals } = data.objects.type;
     const genres = articles.map(x => x.metafield.genre);
     const counts = genres.reduce((pre, cur) => (pre[cur.value]++ || (pre[cur.value] = 1), pre), {});

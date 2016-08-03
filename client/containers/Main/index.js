@@ -14,7 +14,6 @@ class Main extends Component {
     card.title = title;
     card.id = _id;
     card.date = `${time.getFullYear()}/${time.getMonth()}/${time.getDate()}`;
-    card.brief = metafield.brief.value;
     card.genre = metafield.genre.value;
     card.image = metafield.image.url;
     return card;
@@ -22,13 +21,12 @@ class Main extends Component {
 
   render() {
     const cards = this.props.articles.map(this.parseArticles);
-    const renderCard = ({ title, id, date, brief, genre, image }, key) =>
+    const renderCard = ({ title, id, date, genre, image }, key) =>
       <Card
         key={key}
         id={id}
         title={title}
         date={date}
-        brief={brief}
         genre={genre}
         image={image}
         main

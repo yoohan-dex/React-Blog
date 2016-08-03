@@ -4,10 +4,8 @@ import classnames from 'classnames';
 import s from './styles.scss';
 
 class Card extends Component {
-
-
   render() {
-    const { image, title, brief, date, genre, id, main } = this.props;
+    const { image, title, date, genre, id, main } = this.props;
     const bgStyle = {
       backgroundImage: `url(${image})`,
     };
@@ -15,7 +13,6 @@ class Card extends Component {
       [s.cardStrink]: this.context.logoState && window.innerWidth > 736,
       [s.cardMain]: main,
     });
-
     return (
       <div className={style}>
         <Link to={`/article/${id}`} className={s.link}>
@@ -26,7 +23,6 @@ class Card extends Component {
           </article>
         </Link>
       </div>
-
     );
   }
 }
@@ -34,7 +30,6 @@ class Card extends Component {
 Card.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
-  brief: PropTypes.string,
   date: PropTypes.string,
   genre: PropTypes.string,
   id: PropTypes.string,

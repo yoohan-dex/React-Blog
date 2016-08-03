@@ -32,7 +32,6 @@ class Search extends Component {
     card.title = title;
     card.id = _id;
     card.date = `${time.getFullYear()}/${time.getMonth()}/${time.getDate()}`;
-    card.brief = metafield.brief.value;
     card.genre = metafield.genre.value;
     card.image = metafield.image.url;
     return card;
@@ -47,13 +46,14 @@ class Search extends Component {
         match = this.props.articles.filter(x => x.title.match(str));
       }
       if (this.props.params.genre) {
-        match = this.props.articles.filter(x => x.metafield.genre.value === this.props.params.genre);
+        match = this.props.articles
+          .filter(x => x.metafield.genre.value === this.props.params.genre);
       }
       if (this.props.params.date) {
         match = this.props.articles.filter(x => {
           const time = new Date(x.created);
-          const months = time.getMonth();
-          return parseInt(this.props.params.date, 10) === months;
+          const month = time.getMonth();
+          return parseInt(this.props.params.date, 10) === month;
         });
       }
       cards = match.map(this.parseArticles);
@@ -86,6 +86,7 @@ class Search extends Component {
 
 Search.propTypes = {
   articles: PropTypes.array,
+  params: PropTypes.object,
 };
 const mapStateToProps = searchSelector();
 export default connect(mapStateToProps, null, null, { pure: false })(Search);
