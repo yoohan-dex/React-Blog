@@ -6,6 +6,7 @@ import {
   LOADING_GENRE,
   LOADING_ERROR,
   LOADING_DATE,
+  LOADING_ABOUT,
 } from './constants';
 
 const initialState = fromJS({
@@ -17,6 +18,7 @@ const initialState = fromJS({
   search: '',
   dateGroup: [],
   item_num: 5,
+  about: '',
 });
 
 function appReducer(state = initialState, action) {

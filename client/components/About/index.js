@@ -4,7 +4,7 @@ import s from './styles.scss';
 
 class About extends Component {
   render() {
-    const content = '# About This Blog\n\nI build this blog to help some people wanted to learn some technelogies about web developing';
+    const { content } = this.props;
     return (
       <article className={s.article}>
         <ReactMarkdown

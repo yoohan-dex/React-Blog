@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import aboutSelector from '../Main/selectors';
+
 import Panel from '../../components/Panel';
 import Self from '../../components/Self';
 import AboutText from '../../components/About';
@@ -8,9 +11,10 @@ class About extends Component {
     document.title = `About - ${config.site.title} `;
   }
   render() {
+    const { about } = this.props;
     return (
       <Panel>
-        <AboutText />
+        <AboutText content={about} />
         <Self />
       </Panel>
     );
@@ -18,7 +22,9 @@ class About extends Component {
 }
 
 About.propTypes = {
-
+  about: PropTypes.string,
 };
+const mapStateToProps = aboutSelector();
 
-export default About;
+
+export default connect(mapStateToProps, null, null, { pure: false })(About);

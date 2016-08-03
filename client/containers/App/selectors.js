@@ -22,6 +22,7 @@ const genreSelector = () => createSelector(
   globalState => globalState.get('genres')
 );
 
+
 const dateGroupSelector = () => createSelector(
   globalDomain(),
   globalState => globalState.get('dateGroup')

@@ -15,9 +15,7 @@
   transition-duration: .5s;
   transition-property: left, width;
   @include breakpoint(xlarge) {
-    // padding: 8% 0% 8% 2%;
-    flex-basis: percentage(1/4);
-    
+    @include asideAction(4);    
   }
   @include breakpoint(large) {
     @include asideAction(3);

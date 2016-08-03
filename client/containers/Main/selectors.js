@@ -11,11 +11,16 @@ const numSelector = () => createSelector(
   mainDomain(),
   mainState => mainState.get('item_num')
 );
+const aboutSelector = () => createSelector(
+  mainDomain(),
+  globalState => globalState.get('about')
+);
 
 const mainSeletor = () => createSelector(
   mainDomain(),
   articleSelector(),
   numSelector(),
+  aboutSelector(),
   substate => substate.toJS()
 );
 

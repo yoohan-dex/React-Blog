@@ -2,6 +2,7 @@ import { fromJS } from 'immutable';
 import {
   LOADING_ERROR,
   LOADING_ARTICLE,
+  LOADING_ABOUT,
 } from '../App/constants';
 
 const initialState = fromJS({
@@ -11,6 +12,7 @@ const initialState = fromJS({
   images: [],
   date: [],
   item_num: 9,
+  about: '',
 });
 
 function mainReducer(state = initialState, action) {
@@ -21,7 +23,9 @@ function mainReducer(state = initialState, action) {
     case LOADING_ARTICLE:
       return state
         .set('articles', action.afterSorted);
-
+    case LOADING_ABOUT:
+      return state
+        .set('about', action.aboutContent);
     default:
       return state;
   }

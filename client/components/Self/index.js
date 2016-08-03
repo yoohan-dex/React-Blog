@@ -10,15 +10,15 @@ const Self = props => {
           <p>Aooren</p>
         </section>
         <section className={s.introduction}>
-          <p>I' am a student; intriest driven developer about web . welcome reading my article. When I was young, always want to build a website for all of world , but utill I'm can build a website easily I hate it lightly. because I just a web developer ,I can't change a world like Mask, or Job or or Bill Gate. really depointed for my skills .</p>
+          <p>I'm a curiosity-driven WEB developer , welcome reading my articles. I  like design, contained data flow and GUI . I 'm good at React ecosystem, CSS, and functional programming, furthermore, I also develop back-end.
+
+Although I 'm just a novice in the whole developer world , I believe I will grow up soon .If you like my articles , welcome contact me , I like to make friends . ( and girlfriend ). = v = .</p>
         </section>
       </div>
       <div className={s.contact}>
-        <h1 className={s.title}>CONTACT</h1>
         <section className={s.link}>
-          <a className={s.twitter}href="http://baidu.com">TWITTER</a>
-          <a className={s.wechat}href="http://baidu.com">WECHAT</a>
-          <a className={s.github}href="http://baidu.com">GITHUB</a>
+          <a className={s.twitter}href="https://twitter.com/lengDL">TWITTER</a>
+          <a className={s.github}href="https://github.com/yoohan-dex">GITHUB</a>
         </section>
       </div>
     </div>

@@ -4,7 +4,6 @@
   flex-direction: column;
   box-shadow: 0 2px 5px 2px $shadow;
   flex-basis: 100%;
-  min-height: 1000px;
   background: $card;
   color: white;
   overflow: hidden;
@@ -70,6 +69,9 @@
 }
 .markdown {
   padding: 0 10% 5%;
+  @include breakpoint(small) {
+    padding: 0 6% 5%;
+  }
 }
 .genre {
   padding: 5% 10%;
