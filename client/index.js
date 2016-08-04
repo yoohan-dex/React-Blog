@@ -2,9 +2,10 @@ import 'babel-polyfill';
 
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
+import useScroll from 'react-router-scroll';
 
 import routes from './routes';
 import storeCreator from './store';
@@ -22,7 +23,11 @@ store.runSaga(appSaga);
 
 render(
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <Router
+      history={history}
+      routes={routes}
+      render={applyRouterMiddleware(useScroll())}
+    />
   </Provider>
 
 , document.getElementById('app'));

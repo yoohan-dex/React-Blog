@@ -21,7 +21,7 @@ class ArticlePage extends Component {
     const article = {};
     const time = new Date(created);
     article.title = title;
-    article.date = `${time.getFullYear()}/${time.getMonth()}/${time.getDate()}`;
+    article.date = `${time.getFullYear()}/${time.getMonth() + 1}/${time.getDate()}`;
     article.content = content;
     article.genre = metafield.genre.value;
     article.image = metafield.image.url;

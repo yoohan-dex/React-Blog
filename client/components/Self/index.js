@@ -10,9 +10,9 @@ const Self = props => {
           <p>Aooren</p>
         </section>
         <section className={s.introduction}>
-          <p>I'm a curiosity-driven WEB developer , welcome reading my articles. I  like design, contained data flow and GUI . I 'm good at React ecosystem, CSS, and functional programming, furthermore, I also develop back-end.
+          <p>I'm a curiosity-driven WEB developer , welcome reading my articles. I  like design, containing data flow and GUI . I 'm good at React ecosystem, CSS, and functional programming, furthermore, I also develop back-end.
 
-Although I 'm just a novice in the whole developer world , I believe I will grow up soon .If you like my articles , welcome contact me , I like to make friends . ( and girlfriend ). = v = .</p>
+Although I 'm just a novice in the whole developer world , I believe I will grow up soon .If you like my articles , welcome to contact me , I like to make friends . ( and girlfriend ). = v = .</p>
         </section>
       </div>
       <div className={s.contact}>
