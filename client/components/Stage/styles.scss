@@ -13,16 +13,19 @@
   transition-duration: $animation-duration;
   transition-property: left, width;
   @include breakpoint(xlarge) {
-    padding-top: 60px;
+    padding-top: 90px;
   }
   @include breakpoint(large) {
-    padding-top: 60px;
+    padding-top: 80px;
   }
   @include breakpoint(medium) {
-    padding-top: 60px;
+    padding-top: 70px;
   }
   @include breakpoint(small) {
-    padding-top: 80px;
+    padding-top: 60px;
+  }
+  @include breakpoint(xsmall) {
+    padding-top: 50px;
   }
 }
 
