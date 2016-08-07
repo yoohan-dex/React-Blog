@@ -40,7 +40,7 @@
   background-position: center center;
   background-size: cover;
   padding: 40% 0% 0 0%;
-  
+  height: 400px;
   .title {
     position: relative;
     top: 30%;
@@ -74,7 +74,7 @@
   }
 }
 .genre {
-  padding: 5% 10%;
+  padding: 30px 10%;
   a {
     cursor: pointer;
     color: $article-a;
